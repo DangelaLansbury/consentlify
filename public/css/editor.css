@@ -1,0 +1,242 @@
+/* ----- EDITOR ----- */
+
+#editor {
+    margin-bottom: 6em;
+}
+
+h3 {
+    font-family: "NotoSansMedium", sans-serif;
+    font-weight: normal;
+    font-weight: normal;
+    font-size: 1.25em;
+    line-height: 1.25em;
+    margin: 0;
+}
+
+/* Header & Footer */
+
+.page-header-editor {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5em;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 3.5em;
+    border-bottom: 0.063em solid #D6D6D8;
+    box-shadow: 0 0.375em 1.5em rgba(0, 0, 12, 0.04);
+}
+
+.logo-editor {
+    height: 2em;
+    width: 3.728em;
+}
+
+.header-actions {
+    display: flex;
+    margin-right: 4%;
+    height: 2.5em;
+}
+
+.reset {
+    cursor: pointer;
+    display: flex;
+    border: none;
+    background-color: white;
+    outline: none;
+}
+
+.save {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 10.125em;
+    margin-left: 0.75em;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.5em 0.75em;
+    background-color: #4A9599;
+    /* font */
+    font-family: "NotoSansRegular", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.375em;
+    color: white;
+}
+
+.save:hover {
+    background-color: #3C8085;
+}
+
+/* EDITOR CONTENT */
+
+/* Demo */
+
+.annotation-demo {
+    margin: 1.125em 0 2em;
+    padding-left: 1em;
+    border-left: 0.5em solid #D6D6D8;
+    font-size: 1em;
+    line-height: 1.75em;
+    font-family: 'NotoSansRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #707076;
+}
+
+.demo-heading {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hideToggle {
+    display: inline-flex;
+    align-items: center;
+    height: 1.5em;
+    width: 1.5em;
+    margin-left: 0.5em;
+}
+
+.demo-instruction {
+    margin: 0.75em 0;
+}
+
+.demo-sample {
+    margin: 0.25em 0;
+    padding: 1em;
+    border-radius: 0.375em;
+    background-color: #F5F5F6;
+    /* font */
+    font-family: 'VollkornRegular', serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #1F1F29;
+}
+
+.demo-note {
+    margin: 0.75em 0;
+    color: #707076;
+    font-size: 0.813em;
+    line-height: 1.75em;
+}
+
+/* Editor form */
+
+.editor-section-heading {
+    margin-top: 1em;
+}
+
+.editor-section {
+    display: block;
+    margin-bottom: 1.5em;
+}
+
+label {
+    /* font */
+    font-family: 'VollkornRegular', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1em;
+}
+
+.editor-input {
+    display: block;
+    width: 50%;
+    padding: 0.5em 0.75em;
+    border: 2.5px solid #F5F5F6;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    margin: 0.5em 0 0;
+    /* font  */
+    font-family: 'NotoSansMedium', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+}
+
+input:focus {
+    outline: 2px solid #51B2AC;
+}
+
+.editor-input-body {
+    display: block;
+    width: 100%;
+    padding: 0.5em 0.75em;
+    border: 2.5px solid #F5F5F6;
+    box-sizing: border-box;
+    border-radius: 0.75em;
+    margin: 0.5em 0 0;
+    /* font  */
+    font-family: 'NotoSansRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+}
+
+.editor-input-body:focus-within {
+    outline: 2px solid #51B2AC;
+}
+
+textarea {
+    resize: none;
+    /* font  */
+    font-family: 'NotoSansRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;;
+    font-size: 1em;
+    line-height: 1.75em;
+    color: #707076;
+}
+
+textarea:focus {
+    color: #1F1F29;
+}
+
+.input-body {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.placeholder {
+    display: block;
+    visibility: hidden;
+    color: #707076;
+    border-top: 2px solid #F5F5F6;
+    padding-top: 0.375em;
+    font-size: 0.813em;
+    line-height: 1.75em;
+}
+
+textarea:focus ~ .placeholder {
+    visibility: visible;
+}
+
+#studyLinkInput {
+    width: 100%;
+    /* font  */
+    font-family: 'NotoSansRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    color: #707076;
+}
+
+.consent-language {
+    margin: 1.125em 0 3em;
+}

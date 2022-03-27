@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <title>Consentlify</title>
+    <!-- fonts -->
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/noto-sans" type="text/css"/>   
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/vollkorn" type="text/css"/> 
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/editor.css">
+</head>
+<body>
+    <button id="toTop" title="Go to top">
+        <div class="toTop-icon">
+            <img src="/images/arrow-up.svg" alt="arrow up icon">
+        </div>
+    </button> 
+    <form id="editor" action="/edit" method="post">
+        <div class="page-header-editor">
+            <a href="https://github.com/DangelaLansbury" class="logo" target="_blank">
+                <img src="/images/logo-little.svg" class="logo-editor" alt="Consentlify logo small">
+            </a>
+            <div class="header-actions">
+                <input type="reset" class="action reset"> 
+                <button type="submit" class="save">
+                    <div class="action-icon">
+                        <img src="/images/floppy-disk.svg" alt="floppy disk icon">
+                    </div>
+                    <span>Save Changes</span>
+                </button>
+            </div>
+        </div>
+        <div class="container-form">
+            <div class="editor-page-heading">
+                <h1>Form Editor</h1>
+            </div>
+            <div class="editor-meta">
+                <div class="editor-section">
+                    <label for="formTitleInput">Form Title</label>
+                    <input id="formTitleInput" type="text" name="formTitle" class="editor-input" value="<%= title %>">
+                </div>
+                <div class="study-link">
+                    <label for="studyLinkInput">Study Link</label>
+                    <input id="studyLinkInput" type="text" name="studyURL" class="editor-input" value="<%= studyLink %>">
+                </div>
+            </div>
+            <div class="editor-section-heading">
+                <h2><%= partOneName %></h2>
+            </div>
+            <div class="annotation-demo">
+                <div class="demo-heading">
+                    <h3>How to use annotations</h3><span class="hideToggle"><img src="/images/eye-crossed.svg" id="eye-icon" alt="eye icon"></span>
+                </div>
+                <div class="demo-body">
+                    <p class="demo-instruction">Use curly braces in body text to {annotate} [And brackets to add description.]</p>
+                    <p class="demo-sample">Use curly braces in body text to <a id="sample" class="annotation annotation-link">annotate</a> <span id="annotationsample" class="annotation annotation-body" style="display: none">And brackets to add description.</span></p>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="aboutInput" type="text" name="aboutTitle" class="editor-input" value="<%= allSections[0].header %>">
+                <div class="editor-input-body">
+                    <textarea id="aboutBodyInput" type="text" name="aboutBody" class="input-body" rows="8"><%= allSections[0].body %></textarea>
+                    <label for="aboutBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="introInput" type="text" name="introTitle" class="editor-input" value="<%= allSections[1].header %>">
+                <div class="editor-input-body">
+                    <textarea id="introBodyInput" type="text" name="introBody" class="input-body" rows="8"><%= allSections[1].body %></textarea>
+                    <label for="introBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="purposeResearchInput" type="text" name="purposeResearchTitle" class="editor-input" value="<%= allSections[2].header %>">
+                <div class="editor-input-body">
+                    <textarea id="purposeResearchBodyInput" type="text" name="purposeResearchBody" class="input-body" rows="8"><%= allSections[2].body %></textarea>
+                    <label for="purposeResearchBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="typeOfResearchInput" type="text" name="typeOfResearchTitle" class="editor-input" value="<%= allSections[3].header %>">
+                <div class="editor-input-body">
+                    <textarea id="typeOfResearchBodyInput" type="text" name="typeOfResearchBody" class="input-body" rows="8"><%= allSections[3].body %></textarea>
+                    <label for="typeOfResearchBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="selectionInput" type="text" name="selectionTitle" class="editor-input" value="<%= allSections[4].header %>">
+                <div class="editor-input-body">
+                    <textarea id="selectionBodyInput" type="text" name="selectionBody" class="input-body" rows="8"><%= allSections[4].body %></textarea>
+                    <label for="selectionBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="voluntPartInput" type="text" name="voluntPartTitle" class="editor-input" value="<%= allSections[5].header %>">
+                <div class="editor-input-body">
+                    <textarea id="voluntPartBodyInput" type="text" name="voluntPartBody" class="input-body" rows="8"><%= allSections[5].body %></textarea>
+                    <label for="voluntPartBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="infoOnDrugInput" type="text" name="infoOnDrugTitle" class="editor-input" value="<%= allSections[6].header %>">
+                <div class="editor-input-body">
+                    <textarea id="infoOnDrugBodyInput" type="text" name="infoOnDrugBody" class="input-body" rows="8"><%= allSections[6].body %></textarea>
+                    <label for="infoOnDrugBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="protocolInput" type="text" name="protocolTitle" class="editor-input" value="<%= allSections[7].header %>">
+                <div class="editor-input-body">
+                    <textarea id="protocolBodyInput" type="text" name="protocolBody" class="input-body" rows="8"><%= allSections[7].body %></textarea>
+                    <label for="protocolBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="descOfProcessInput" type="text" name="descOfProcessTitle" class="editor-input" value="<%= allSections[8].header %>">
+                <div class="editor-input-body">
+                    <textarea id="descOfProcessBodyInput" type="text" name="descOfProcessBody" class="input-body" rows="8"><%= allSections[8].body %></textarea>
+                    <label for="descOfProcessBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="durationInput" type="text" name="durationTitle" class="editor-input" value="<%= allSections[9].header %>">
+                <div class="editor-input-body">
+                    <textarea id="durationBodyInput" type="text" name="durationBody" class="input-body" rows="8"><%= allSections[9].body %></textarea>
+                    <label for="durationBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="sideEffectsInput" type="text" name="sideEffectsTitle" class="editor-input" value="<%= allSections[10].header %>">
+                <div class="editor-input-body">
+                    <textarea id="sideEffectsBodyInput" type="text" name="sideEffectsBody" class="input-body" rows="8"><%= allSections[10].body %></textarea>
+                    <label for="sideEffectsBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="risksInput" type="text" name="risksTitle" class="editor-input" value="<%= allSections[11].header %>">
+                <div class="editor-input-body">
+                    <textarea id="risksBodyInput" type="text" name="risksBody" class="input-body" rows="8"><%= allSections[11].body %></textarea>
+                    <label for="risksBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="benefitsInput" type="text" name="benefitsTitle" class="editor-input" value="<%= allSections[12].header %>">
+                <div class="editor-input-body">
+                    <textarea id="benefitsBodyInput" type="text" name="benefitsBody" class="input-body" rows="8"><%= allSections[12].body %></textarea>
+                    <label for="benefitsBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="reimbursementsInput" type="text" name="reimbursementsTitle" class="editor-input" value="<%= allSections[13].header %>">
+                <div class="editor-input-body">
+                    <textarea id="reimbursementsBodyInput" type="text" name="reimbursementsBody" class="input-body" rows="8"><%= allSections[13].body %></textarea>
+                    <label for="reimbursementsBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="confidentialityInput" type="text" name="confidentialityTitle" class="editor-input" value="<%= allSections[14].header %>">
+                <div class="editor-input-body">
+                    <textarea id="confidentialityBodyInput" type="text" name="confidentialityBody" class="input-body" rows="8"><%= allSections[14].body %></textarea>
+                    <label for="confidentialityBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="sharingInput" type="text" name="sharingTitle" class="editor-input" value="<%= allSections[15].header %>">
+                <div class="editor-input-body">
+                    <textarea id="sharingBodyInput" type="text" name="sharingBody" class="input-body" rows="8"><%= allSections[15].body %></textarea>
+                    <label for="sharingBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="rightToRefuseInput" type="text" name="rightToRefuseTitle" class="editor-input" value="<%= allSections[16].header %>">
+                <div class="editor-input-body">
+                    <textarea id="rightToRefuseBodyInput" type="text" name="rightToRefuseBody" class="input-body" rows="8"><%= allSections[16].body %></textarea>
+                    <label for="rightToRefuseBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="altsInput" type="text" name="altsTitle" class="editor-input" value="<%= allSections[17].header %>">
+                <div class="editor-input-body">
+                    <textarea id="altsBodyInput" type="text" name="altsBody" class="input-body" rows="8"><%= allSections[17].body %></textarea>
+                    <label for="altsBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <input id="contactInput" type="text" name="contactTitle" class="editor-input" value="<%= allSections[18].header %>">
+                <div class="editor-input-body">
+                    <textarea id="contactBodyInput" type="text" name="contactBody" class="input-body" rows="8"><%= allSections[18].body %></textarea>
+                    <label for="contactBodyInput" class="placeholder">Use {curly braces} to add an annotation and [brackets] to define annotation text.<br></label>
+                </div>
+            </div>
+            <div class="editor-section">
+                <label for="disclaimerInput">Disclaimer</label>
+                <textarea id="disclaimerInput" type="text" name="disclaimerBody" class="editor-input-body" rows="4"><%= disclaimer %></textarea>
+            </div>
+            <div class="editor-section-heading">
+                <h2><%= partTwoName %></h2>
+            </div>
+            <div class="consent-language">
+                <div class="editor-section">
+                    <label for="consentPatientInput">Consent Language for Participant</label>
+                    <textarea id="consentPatientInput" type="text" name="consentDescription" class="editor-input-body" rows="4"><%= consentPatient %></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="page-footer">
+        <div class="footer-actions">
+            <a href="/" class="action">
+                <div class="action-icon">
+                    <img src="/images/sign-inactive.svg" alt="active viewer icon">
+                </div>
+                <span>Sign</span>
+            </a>
+            <div class="action-divider"></div>
+            <div class="action current">
+                <div class="action-icon">
+                    <img src="/images/edit-active.svg" alt="inactive editor icon">
+                </div>
+                <span>Edit</span>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="/jquery/jquery.js"></script>
+    <!-- javascript -->
+    <script src="src/form.js"></script>
+    <script src="/src/editor.js"></script>
+</body>
+</html>

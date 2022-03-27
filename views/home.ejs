@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <title>Consentlify</title>
+    <!-- fonts -->
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/noto-sans" type="text/css"/>  
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/vollkorn" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/comicdragonrunes" type="text/css"/> 
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="page-header-home">
+        <a href="https://github.com/DangelaLansbury" class="logo" target="_blank">
+            <img src="/images/logo-big.svg" class="logo-home" alt="Consentlify logo">
+        </a>
+    </div>
+    <button id="toTop" title="Go to top">
+        <div class="toTop-icon">
+            <img src="/images/arrow-up.svg" alt="arrow up icon">
+        </div>
+    </button> 
+    <div class="container-form">
+        <h1><%= title %></h1>
+        <div class="meta-note">
+            <p>This mock form uses a fictional drug (where my Dune fans at) and trial to demonstrate Consentlify's primary aim: to humanize virtual Informed Consent through inline annotation.</p>
+        </div>
+        <% allSections.forEach(function(section) { %>
+            <div class="form-section">
+                <h2 class="section-header"><%- section.header %></h2>
+                <p class="section-body"><%- section.body %></p>
+            </div>
+        <% }) %>
+        <div class="form-section disclaimer">
+            <p class="section-body"><%- disclaimer %></p>
+        </div>
+        <div class="form-study-link">
+            <p class="section-body">Visit the <a href="<%- studyLink %>">study's website</a> to learn more about the trial.</p>
+        </div>
+        <div class="form-section">
+            <h2 class="section-header">Certificate of Consent</h2>
+            <p class="section-body"><%- consentPatient %></p>
+        </div>
+        <div class="form-signature">
+            <div class="feather-icon">
+                <img src="/images/feather.svg" alt="feather signature icon">
+            </div>
+            <div class="signature-field">
+                <input type="text" class="signature-input">
+                <input type="text" class="signature-date" readonly>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="footer-actions">
+            <div class="action current">
+                <div class="action-icon">
+                    <img src="/images/sign-active.svg" alt="inactive viewer icon">
+                </div>
+                <span>Sign</span>
+            </div>
+            <div class="action-divider"></div>
+            <a href="edit" class="action">
+                <div class="action-icon">
+                    <img src="/images/edit-inactive.svg" alt="active editor icon">
+                </div>
+                <span>Edit</span>
+            </a>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="/jquery/jquery.js"></script>
+    <!-- javascript -->
+    <script src="/src/form.js"></script>
+</body>
+</html>

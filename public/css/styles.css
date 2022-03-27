@@ -1,0 +1,364 @@
+/* PAGE STYLES */
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header & Footer */
+
+.page-header-home {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    height: 4.5em;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 3.5em;
+    border-bottom: 0.063em solid #D6D6D8;
+    box-shadow: 0 0.375em 1.5em rgba(0, 0, 12, 0.04);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    /* height: 2em; */
+    margin-left: 4%;
+    opacity: 80%;
+}
+
+.logo:hover {
+    opacity: 100%;
+}
+
+.logo-home {
+    height: 2em;
+    width: 15.454em;
+}
+
+.page-footer {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    top: 0;
+    height: 4.5em;
+    width: 100%;
+    background-color: #fff;
+    border-top: 0.063em solid #D6D6D8;
+    box-shadow: 0 -0.375em 1.5em rgba(0, 0, 12, 0.04);
+}
+
+.footer-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.375em;
+    border-radius: 0.375em;
+    padding: 0.375em;
+    /* font */
+    font-family: "NotoSansRegular", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.375em;
+    color: #707076;
+}
+
+.action:hover {
+    background-color: #F5F5F6;
+}
+
+.current {
+    color: #3C8085; 
+}
+
+.current:hover {
+    background-color: #fff;
+}
+
+.action-icon {
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    margin-right: 0.5em;
+}
+
+.action-divider {
+    display: inline-block;
+    height: 2.5em;
+    width: 0.125em;
+    margin: 0 1em;
+    background-color: #D6D6D8;
+}
+
+/* ----- CONSENT FORM CONTENT ----- */
+
+.container-form {
+    display: block;
+    width: 90%;
+    max-width: 43.25em;
+    margin: 0 auto;
+    color: #1F1F29;
+}
+
+h1 {
+    font-family: 'VollkornRegular', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+h2 {
+    font-family: 'VollkornRegular', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 2em;
+    margin: 0;
+}
+
+.form-section {
+    font-family: 'VollkornRegular', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+}
+
+.meta-note {
+    margin: 1.5em 0 1em;
+    padding-left: 1em;
+    border-left: 0.5em solid #D6D6D8;
+    /* font */
+    font-family: 'VollkornItalic', serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #707076;
+    font-size: 1em;
+    line-height: 1.75em;
+}
+
+.section-header {
+    margin: 1.25em 0 0.25em;
+}
+
+.section-body {
+    margin: 0;
+}
+
+.disclaimer {
+    font-family: 'VollkornMedium', serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #707076;
+    margin: 1.25em 0 1.25em
+}
+
+/* Study link */
+
+.form-study-link {
+    margin: 0.25em 0;
+    padding: 1em;
+    border-radius: 0.375em;
+    background-color: #F5F5F6;
+    /* font */
+    font-family: 'NotoSansRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.form-study-link a {
+    color: #4A9599;
+    text-decoration: none;
+}
+
+.form-study-link a:hover {
+    color: #3C8085;
+}
+
+/* ANNOTATIONS */
+
+.annotation-link {
+    cursor: pointer;
+    padding: 0.25em;
+    border-radius: 0.375em;
+}
+
+.annotation-link::after {
+    margin-left: 0.25em;
+    content: "[+]";
+    font-size: 0.875em;
+    line-height: 1.875em;
+    vertical-align: text-top;
+    font-family: monospace;
+}
+
+.annotation-link.engaged-link::after {
+    margin-left: 0.25em;
+    content: "[-]";
+    font-size: 0.875em;
+    line-height: 1.875em;
+    vertical-align: text-top;
+    font-family: monospace;
+}
+
+.annotation-body {
+    margin: 0.75em 0;
+    padding: 2em;
+    border-radius: 0.375em;
+    /* font */
+    font-family: 'NotoSansRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.active {
+    display: block !important;
+}
+
+/* colors */
+
+.blue {
+    background-color: #A2C7D5;
+}
+
+.purple {
+    background-color: #B9C5E5;
+}
+
+.green {
+    background-color: #B2D4C3;
+}
+
+.green-lt {
+    background-color: #D8EEE7;
+}
+
+.gold {
+    background-color: #F1C897;
+}
+
+.brown {
+    background-color: #E6C7A7;
+}
+
+.red {
+    background-color: #F8D7D5;
+}
+
+/* SCROLL TO TOP */
+
+#toTop {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 8em; 
+    right: 3em; 
+    z-index: 20; 
+    border: none; 
+    border-radius: 2em;
+    outline: none;
+    background-color: #C2C2C5;
+    cursor: pointer;
+    padding: 1em; 
+}
+  
+#toTop:hover {
+    background-color: #707076; 
+}
+
+.toTop-icon {
+    display: flex;
+    height: 2em;
+    width: 2em;
+}
+
+/* SIGNATURE */
+
+.form-signature {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2em 0 7.5em;
+    padding: 1em 0;
+    border-bottom: 0.25em solid #D6D6D8;
+}
+
+.form-signature:focus-within {
+    border-bottom: 0.25em solid #4A9599;
+}
+
+.form-signature:hover {
+    border-bottom: 0.25em solid #51B2AC;
+}
+
+.feather-icon {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    margin-right: 2em;
+}
+
+.signature-field {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+
+.signature-input {
+    display: inline-block;
+    height: 2em;
+    width: 80%;
+    background-color: none;
+    border: none;
+    outline: none;
+    /* font */
+    font-family: 'ComicDragonRunesBold';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 3em;
+    line-height: 3em;
+    color: #707076;
+}
+
+.signature-date {
+    display: inline-block;
+    height: 2em;
+    width: 20%;
+    padding-right: 0.5em;
+    background-color: none;
+    border: none;
+    outline: none;
+    /* font */
+    font-family: 'NotoSansRegular', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.25em;
+    line-height: 3em;
+    color: #C2C2C5;
+    text-align: right;
+}
